@@ -1270,6 +1270,12 @@ footer {
   z-index:5;
 }
 
+/* make the row span the full viewport so the absolutely-positioned
+   hero image (top:50% / translateY(-50%)) centers in the section, not just the text */
+.hero-content > .row{
+  min-height:100svh;
+}
+
 /* Lockup */
 
 
