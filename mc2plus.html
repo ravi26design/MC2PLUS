@@ -1068,9 +1068,33 @@ footer {
 .hero-bottom { animation: fadeUp 0.6s 0.2s ease both; }
 .hero-stats-bar { animation: fadeUp 0.6s 0.3s ease both; }
 
+.nav-toggle { display: none; }
+
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
-  nav .nav-links { display: none; }
+  .nav-toggle {
+    display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; margin: -8px; padding: 8px;
+    background: none; border: 0; cursor: pointer;
+  }
+  .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s, opacity .25s; }
+  nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  nav .nav-links {
+    position: fixed; top: 80px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0; height: auto; margin: 0;
+    padding: 8px 24px 16px;
+    background: rgba(255,255,255,0.98); backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 24px 40px rgba(0,0,0,0.06);
+    transform: translateY(-12px); opacity: 0; pointer-events: none;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  nav.open .nav-links { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  nav .nav-links li { width: 100%; }
+  nav .nav-links a { display: block; padding: 14px 2px; font-size: 16px; border-bottom: 1px solid var(--border); }
+  nav .nav-links li:last-child a { border-bottom: 0; }
   .hero {
     min-height: auto;
     justify-content: flex-start;
@@ -1096,6 +1120,20 @@ footer {
   .psu-strip { padding: 36px 24px; }
   .psu-logo-item { padding: 16px 20px; }
   footer { flex-direction: column; text-align: center; gap: 16px; }
+}
+
+/* small phones */
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; gap: 22px; }
+  .process-steps { grid-template-columns: 1fr; }
+  .hero-stats-bar { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .apply-form { padding: 26px 20px; }
+  .hero-mark { font-size: clamp(40px, 13vw, 64px) !important; }
+  .hero-lockup .hero-title,
+  .hero-lockup .hero-title-italic,
+  .word1, .word2, .word3 { font-size: clamp(34px, 11vw, 64px) !important; }
+  .hero-lockup { gap: 14px !important; }
+  .psu-strip-label { font-size: 12px !important; }
 }
 
 
@@ -1743,6 +1781,9 @@ text-transform: uppercase;
     <li><a href="#board">Board</a></li>
     <li><a href="#apply">Apply now</a></li>
   </ul>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <section class="hero-section">
@@ -2516,6 +2557,25 @@ get built.
 })();
 </script>
 
+
+<!-- mobile nav toggle -->
+<script>
+(function () {
+  var nav = document.querySelector('nav');
+  var toggle = document.querySelector('.nav-toggle');
+  if (!nav || !toggle) return;
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 
 <!-- hero-section js -->
 <script>
