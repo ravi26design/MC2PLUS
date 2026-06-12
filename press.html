@@ -56,12 +56,12 @@ nav{
 }
 .press-card:hover{border-color:var(--border2);box-shadow:0 28px 60px rgba(0,32,89,0.12);transform:translateY(-3px);}
 .press-visual{
-  position:relative;overflow:hidden;background:#eceae3;min-height:330px;
+  position:relative;overflow:hidden;background:#eceae3;padding:22px;
+  display:flex;align-items:center;
 }
 .pv-photo{
-  position:absolute;top:22px;left:22px;right:22px;bottom:0;width:auto;height:auto;
-  object-fit:cover;object-position:top center;
-  border-radius:8px 8px 0 0;box-shadow:0 12px 32px rgba(0,32,89,0.14);
+  display:block;width:100%;height:auto;
+  border-radius:6px;box-shadow:0 12px 32px rgba(0,32,89,0.14);
 }
 .pv-badge{
   position:absolute;z-index:2;top:34px;right:34px;display:inline-flex;align-items:center;gap:6px;
@@ -107,7 +107,6 @@ footer .nav-logo-img img{width:80px;}
   .press-hero{padding:128px 24px 40px;}
   .press-list{padding:16px 24px 80px;}
   .press-card{grid-template-columns:1fr;}
-  .press-visual{min-height:230px;}
   .press-content{padding:32px 28px;}
   footer{flex-direction:column;text-align:center;gap:16px;padding:32px 24px;}
 }
