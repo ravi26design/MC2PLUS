@@ -56,16 +56,15 @@ nav{
 }
 .press-card:hover{border-color:var(--border2);box-shadow:0 28px 60px rgba(0,32,89,0.12);transform:translateY(-3px);}
 .press-visual{
-  position:relative;overflow:hidden;color:#fff;
-  background:linear-gradient(150deg,#002059 0%,#0b3a78 58%,#16508c 100%);
-  padding:46px 42px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:280px;
+  position:relative;overflow:hidden;color:#fff;background:#001029;min-height:300px;
 }
-.press-visual::after{content:'';position:absolute;width:360px;height:360px;border:1px solid rgba(255,255,255,0.14);border-radius:50%;right:-130px;bottom:-130px;}
-.press-visual::before{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent);right:46px;top:54px;box-shadow:0 0 26px rgba(212,98,42,.55);}
-.pv-brand{position:relative;z-index:1;font-family:'Fraunces',serif;font-size:clamp(40px,5vw,52px);font-weight:700;letter-spacing:-1px;line-height:1;}
+.pv-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.pv-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,12,34,0.88) 0%,rgba(0,12,34,0.35) 48%,rgba(0,12,34,0.12) 100%);}
+.pv-inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:38px 40px;}
+.pv-brand{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,40px);font-weight:700;letter-spacing:-1px;line-height:1;text-shadow:0 2px 18px rgba(0,8,24,0.5);}
 .pv-brand sup,.pv-brand .pv-plus{color:#e8884a;}
 .pv-brand sup{font-size:.5em;}
-.pv-event{position:relative;z-index:1;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.82);line-height:1.6;}
+.pv-event{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#fff;line-height:1.6;text-shadow:0 2px 12px rgba(0,8,24,0.6);}
 .press-content{padding:48px 52px;display:flex;flex-direction:column;justify-content:center;}
 .press-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px;}
 .press-date{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);}
@@ -103,9 +102,9 @@ footer .nav-logo-img img{width:80px;}
   .press-hero{padding:128px 24px 40px;}
   .press-list{padding:16px 24px 80px;}
   .press-card{grid-template-columns:1fr;}
-  .press-visual{min-height:auto;padding:32px 28px;flex-direction:row;align-items:center;justify-content:space-between;gap:18px;}
-  .press-visual::before{display:none;}
-  .press-visual .pv-event{text-align:right;}
+  .press-visual{min-height:210px;}
+  .pv-inner{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:18px;padding:26px 28px;}
+  .pv-event{text-align:right;}
   .press-content{padding:32px 28px;}
   footer{flex-direction:column;text-align:center;gap:16px;}
 }
@@ -143,8 +142,12 @@ footer .nav-logo-img img{width:80px;}
 <section class="press-list">
   <a class="press-card" href="https://mc2plus.in/11TH%20JUNE%20PRESS%20RELEASE.pdf" target="_blank" rel="noopener">
     <div class="press-visual">
-      <div class="pv-brand">mc<sup>2</sup><span class="pv-plus">+</span></div>
-      <div class="pv-event">Global Energy Show 2026<br>Calgary, Canada</div>
+      <img class="pv-photo" src="press-1.jpg" alt="OIL and PTRC sign the Collaboration Framework at the Global Energy Show 2026, Calgary">
+      <div class="pv-overlay"></div>
+      <div class="pv-inner">
+        <div class="pv-brand">mc<sup>2</sup><span class="pv-plus">+</span></div>
+        <div class="pv-event">Global Energy Show 2026<br>Calgary, Canada</div>
+      </div>
     </div>
     <div class="press-content">
       <div class="press-meta">
