@@ -48,13 +48,25 @@ nav{
 .press-sub{font-size:16px;line-height:1.75;color:var(--muted);max-width:560px;font-weight:300;margin-top:18px;}
 
 /* LIST */
-.press-list{padding:24px 56px 120px;display:flex;flex-direction:column;gap:20px;max-width:1000px;}
+.press-list{padding:24px 56px 120px;display:flex;flex-direction:column;gap:24px;}
 .press-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:16px;
-  padding:36px 40px;text-decoration:none;display:block;
-  transition:border-color .25s,background .25s,transform .25s;
+  background:var(--surface);border:1px solid var(--border);border-radius:22px;
+  text-decoration:none;display:grid;grid-template-columns:minmax(280px,38%) 1fr;
+  overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .25s;
 }
-.press-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px);}
+.press-card:hover{border-color:var(--border2);box-shadow:0 28px 60px rgba(0,32,89,0.12);transform:translateY(-3px);}
+.press-visual{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(150deg,#002059 0%,#0b3a78 58%,#16508c 100%);
+  padding:46px 42px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:280px;
+}
+.press-visual::after{content:'';position:absolute;width:360px;height:360px;border:1px solid rgba(255,255,255,0.14);border-radius:50%;right:-130px;bottom:-130px;}
+.press-visual::before{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent);right:46px;top:54px;box-shadow:0 0 26px rgba(212,98,42,.55);}
+.pv-brand{position:relative;z-index:1;font-family:'Fraunces',serif;font-size:clamp(40px,5vw,52px);font-weight:700;letter-spacing:-1px;line-height:1;}
+.pv-brand sup,.pv-brand .pv-plus{color:#e8884a;}
+.pv-brand sup{font-size:.5em;}
+.pv-event{position:relative;z-index:1;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:rgba(255,255,255,0.82);line-height:1.6;}
+.press-content{padding:46px 48px;display:flex;flex-direction:column;justify-content:center;}
 .press-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
 .press-date{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);}
 .press-chip{font-size:11px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);background:rgba(0,32,89,0.06);border:1px solid var(--border);border-radius:20px;padding:4px 12px;}
@@ -90,7 +102,9 @@ footer .nav-logo-img img{width:80px;}
   nav .nav-links li:last-child a{border-bottom:0;}
   .press-hero{padding:128px 24px 40px;}
   .press-list{padding:16px 24px 80px;}
-  .press-card{padding:28px 24px;}
+  .press-card{grid-template-columns:1fr;}
+  .press-visual{min-height:160px;padding:30px 28px;flex-direction:row;align-items:flex-end;justify-content:space-between;}
+  .press-content{padding:30px 26px;}
   footer{flex-direction:column;text-align:center;gap:16px;}
 }
 </style>
@@ -126,17 +140,22 @@ footer .nav-logo-img img{width:80px;}
 <!-- LIST -->
 <section class="press-list">
   <a class="press-card" href="https://mc2plus.in/11TH%20JUNE%20PRESS%20RELEASE.pdf" target="_blank" rel="noopener">
-    <div class="press-meta">
-      <span class="press-date">11 June 2026</span>
-      <span class="press-chip">Global Energy Show 2026 · Calgary</span>
+    <div class="press-visual">
+      <div class="pv-brand">mc<sup>2</sup><span class="pv-plus">+</span></div>
+      <div class="pv-event">Global Energy Show 2026<br>Calgary, Canada</div>
     </div>
-    <div class="press-headline">
-      Oil India Limited (OIL) and Petroleum Technology Research Centre (PTRC), Canada sign a Collaboration Framework at the Global Energy Show 2026, Calgary, with mc²+ identified as the designated platform for collaborative startup research.
+    <div class="press-content">
+      <div class="press-meta">
+        <span class="press-date">11 June 2026</span>
+      </div>
+      <div class="press-headline">
+        Oil India Limited (OIL) and Petroleum Technology Research Centre (PTRC), Canada sign a Collaboration Framework at the Global Energy Show 2026, Calgary, with mc²+ identified as the designated platform for collaborative startup research.
+      </div>
+      <span class="press-readmore">
+        Read the full release (PDF)
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
     </div>
-    <span class="press-readmore">
-      Read the full release (PDF)
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </span>
   </a>
 </section>
 
