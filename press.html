@@ -56,12 +56,15 @@ nav{
 }
 .press-card:hover{border-color:var(--border2);box-shadow:0 28px 60px rgba(0,32,89,0.12);transform:translateY(-3px);}
 .press-visual{
-  position:relative;overflow:hidden;background:#e9e6df;min-height:330px;
+  position:relative;overflow:hidden;background:#eceae3;min-height:330px;
 }
-.pv-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;}
-.press-visual::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;}
+.pv-photo{
+  position:absolute;top:22px;left:22px;right:22px;bottom:0;width:auto;height:auto;
+  object-fit:cover;object-position:top center;
+  border-radius:8px 8px 0 0;box-shadow:0 12px 32px rgba(0,32,89,0.14);
+}
 .pv-badge{
-  position:absolute;z-index:2;top:16px;right:16px;display:inline-flex;align-items:center;gap:6px;
+  position:absolute;z-index:2;top:34px;right:34px;display:inline-flex;align-items:center;gap:6px;
   font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--text);
   background:rgba(255,255,255,0.95);border:1px solid var(--border);border-radius:30px;padding:6px 12px;
   box-shadow:0 8px 20px rgba(0,32,89,0.14);
