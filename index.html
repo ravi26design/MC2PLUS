@@ -1134,6 +1134,14 @@ footer {
   .word1, .word2, .word3 { font-size: clamp(34px, 11vw, 64px) !important; }
   .hero-lockup { gap: 14px !important; }
   .psu-strip-label { font-size: 12px !important; }
+  /* keep "Energy = MC²" on one line, scale to fit smallest phones */
+  .hero .hero-title { font-size: clamp(26px, 9vw, 56px); letter-spacing: -1px; }
+  .energy-box { padding: 8px 11px; margin: 6px 0; }
+}
+
+/* very small phones: guarantee the Energy = MC² box never overflows */
+@media (max-width: 360px) {
+  .hero .hero-title { font-size: 8.4vw; }
 }
 
 
@@ -1747,7 +1755,8 @@ text-transform: uppercase;
   padding:18px 14px;
   line-height:1;
   margin:8px 0;
-}    
+  white-space:nowrap;
+}
 
 .psu-logo-link {
   text-decoration: none;
