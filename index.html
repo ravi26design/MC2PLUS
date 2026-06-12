@@ -1770,43 +1770,44 @@ text-transform: uppercase;
   margin-top: 30px;
 } */
 
-/* ===== MOBILE / TABLET: stack intro hero — image first (visible), text below, centered & contained ===== */
+/* ===== MOBILE / TABLET: image first (big), then horizontal MC² = words lockup ===== */
 @media (max-width: 991px){
-  .hero-section{ min-height:auto !important; padding:104px 22px 60px !important; }
+  .hero-section{ min-height:auto !important; padding:96px 16px 56px !important; }
   .hero-content > .row{ min-height:auto !important; }
   .hero-content .col-lg-6{ width:100% !important; }
 
-  /* image: bring into normal flow at the top, fully visible, sized to fit */
+  /* image: in normal flow at the top, fully visible, large */
   .hero-image{
     position:static !important; left:auto !important; top:auto !important;
     transform:none !important; animation:none !important; mix-blend-mode:normal !important;
     opacity:1 !important; display:block !important;
-    width:60% !important; max-width:260px !important;
+    width:82% !important; max-width:360px !important;
     height:auto !important; max-height:none !important;
     margin:0 auto 18px !important;
   }
 
-  /* lockup: stack MC²= above the words, centered */
-  .col-lg-6:last-child{ display:block !important; justify-content:center !important; }
+  /* lockup: MC² = on the left, words stacked on the right (like desktop), centered as a group */
+  .col-lg-6:last-child{ display:flex !important; justify-content:center !important; }
   .hero-lockup{
-    flex-direction:column !important; align-items:center !important; justify-content:center !important;
-    gap:8px !important; transform:none !important; width:100% !important; text-align:center;
+    flex-direction:row !important; align-items:center !important; justify-content:center !important;
+    gap:14px !important; transform:none !important; width:100% !important;
   }
-  .hero-mark{ justify-content:center !important; }
-  .hero-words{ align-items:center !important; }
-  .hero-line{ margin-inline:auto !important; }
+  .hero-mark{ justify-content:flex-end !important; flex-shrink:0; white-space:nowrap; }
+  .hero-words{ align-items:flex-start !important; }
+  .hero-line{ margin-inline:0 !important; }
 
-  /* sizes that fit the mobile container */
-  .hero-mark{ font-size:clamp(38px,12vw,72px) !important; }
+  /* sizes tuned so MC² + widest word fit the container */
+  .hero-mark{ font-size:clamp(30px,9.6vw,76px) !important; }
   .hero-words .hero-title,
   .hero-words .hero-title-italic,
-  .word1,.word2,.word3{ font-size:clamp(34px,10.5vw,72px) !important; }
+  .word1,.word2,.word3{ font-size:clamp(28px,8.8vw,70px) !important; }
 }
-@media (max-width: 400px){
-  .hero-mark{ font-size:11vw !important; }
+@media (max-width: 360px){
+  .hero-lockup{ gap:10px !important; }
+  .hero-mark{ font-size:9vw !important; }
   .hero-words .hero-title,
   .hero-words .hero-title-italic,
-  .word1,.word2,.word3{ font-size:9.6vw !important; }
+  .word1,.word2,.word3{ font-size:8.2vw !important; }
 }
 </style>
 </head>
