@@ -82,6 +82,11 @@ tbody tr{transition:background .15s ease;}
 /* all rows share one uniform style, separated by lines */
 .t-name{font-weight:400;}
 .t-sector{color:var(--muted);font-weight:300;}
+.annex-group + .annex-group{margin-top:40px;}
+.annex-gtitle{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:-0.3px;margin-bottom:14px;}
+.annex-note{font-size:12px;color:var(--muted);font-weight:300;margin-top:5px;line-height:1.45;}
+table.annex{min-width:900px;}
+table.annex td{font-size:13.5px;}
 
 /* total row — same text, marked by a top line */
 .row-total td{font-weight:700;color:var(--text);border-top:2px solid var(--text);letter-spacing:.3px;}
@@ -117,8 +122,8 @@ footer .nav-logo-img img{width:80px;}
   nav .nav-links li:last-child a{border-bottom:0;}
   .press-hero{padding:128px 24px 36px;}
   .tbl-wrap-outer{padding:8px 24px 80px;}
-  .tabs{display:flex;width:100%;}
-  .tab{flex:1;text-align:center;padding:11px 8px;font-size:12px;}
+  .tabs{display:flex;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .tab{flex:0 0 auto;padding:11px 16px;font-size:12.5px;}
   footer{flex-direction:column;text-align:center;gap:16px;padding:32px 24px;}
 }
 </style>
@@ -156,6 +161,7 @@ footer .nav-logo-img img{width:80px;}
   <div class="tabs" role="tablist">
     <button class="tab active" data-tab="hpcl" role="tab">Investments by HPCL</button>
     <button class="tab" data-tab="ongc" role="tab">Investments by ONGC</button>
+    <button class="tab" data-tab="annex" role="tab">Annexure</button>
   </div>
 
   <!-- HPCL TABLE -->
@@ -272,6 +278,93 @@ footer .nav-logo-img img{width:80px;}
           <tr class="row-total"><td class="sno"></td><td>Total</td><td></td><td class="num">9170.30</td><td class="num">7284.70</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <!-- ANNEXURE -->
+  <div class="tab-panel" id="tab-annex">
+    <div class="tbl-head"><div class="tbl-note">IOCL startups onboarded across funding rounds. Status as reported.</div></div>
+    <div class="annex-group">
+      <div class="annex-gtitle">Round 1 Projects</div>
+      <div class="tbl-scroll">
+        <table class="annex">
+          <thead><tr><th class="sno">S.No</th><th>Startup name</th><th>Project</th><th>At on-boarding</th><th>Status today</th></tr></thead>
+          <tbody>
+          <tr><td class="sno">1</td><td class="t-name">NetPrise Solutions LLP Pvt. Ltd., Bengaluru</td><td class="t-sector">Smart Fuel Management Kiosks with dual authentication and Mobile wallet Integration</td><td>Conceptual stage</td><td>Seed stage / early stage – scaling pilots<div class="annex-note">IOCL placed wide-scale trial order for 30 Dispensing Units (DUs). Due to the COVID pandemic &amp; related issues, the startup was unable to supply DUs beyond 20 nos and requested closure of the contract.</div></td></tr>
+          <tr><td class="sno">2</td><td class="t-name">Mascot Engineering Pvt. Ltd., Mathura</td><td class="t-sector">Electronic leak detector for detecting body and bung leak of LPG cylinders</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">Sukriti Social Foundation Pvt. Ltd., Gurugram</td><td class="t-sector">Self-Sustaining Low Maintenance Toilets: The Eco-Toilet</td><td>Conceptual stage</td><td>Seed stage / early stage – scaling pilots<div class="annex-note">IOCL placed wide-scale trial orders for 50 Eco-toilets at various IOCL ROs and the startup executed the order. IOCL placed another order for 50 Eco-toilets.</div></td></tr>
+          <tr><td class="sno">4</td><td class="t-name">KritiLabs Technologies LLP Pvt Ltd, Chennai</td><td class="t-sector">Advanced Locking Solution (ALS) IOT Security Platform</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">5</td><td class="t-name">Easy Roads Technologies Pvt Ltd, Mumbai</td><td class="t-sector">Easy Roads – App based IoT Intervention</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Vasitars Pvt Ltd, Bhubaneswar</td><td class="t-sector">Nano fillers reinforced polymer composites wrap to repair corroded steel pipelines</td><td>Conceptual stage</td><td>Seed stage / early stage – early revenue<div class="annex-note">Startup has created a business out of the innovation and is generating revenue.</div></td></tr>
+          <tr><td class="sno">7</td><td class="t-name">H2E Power System Pvt Ltd, Pune</td><td class="t-sector">Fuel cell–solar–battery hybrid electrical energy charging station for retail outlets</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">8</td><td class="t-name">Tricho Agronica Pvt Ltd, Faridabad</td><td class="t-sector">Bioformulation: A novel, innovative ecofriendly solution against fungal pathogens in Tomato</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">9</td><td class="t-name">Chakr Innovation Pvt Ltd, Delhi</td><td class="t-sector">Reducing PM and SOx emissions from small-scale furnaces and boilers</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">10</td><td class="t-name">Amol Carbons Pvt Ltd, Pune</td><td class="t-sector">Multiuse Fuel from Agricultural Waste Biomass</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">11</td><td class="t-name">Gaadi Technologies Pvt Ltd, Hyderabad</td><td class="t-sector">EasyGaadi – Full Stack Technology enabled solution for Commercial Vehicles</td><td>Conceptual stage</td><td>Foreclosed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="annex-group">
+      <div class="annex-gtitle">Round 2 Projects</div>
+      <div class="tbl-scroll">
+        <table class="annex">
+          <thead><tr><th class="sno">S.No</th><th>Startup name</th><th>Project</th><th>At on-boarding</th><th>Status today</th></tr></thead>
+          <tbody>
+          <tr><td class="sno">1</td><td class="t-name">Beydest Pvt Ltd, Meerut</td><td class="t-sector">Bryosphere – Bio-Inspired Air Purification system for outdoors and indoors</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">2</td><td class="t-name">Sustainable Green Initiative Foundation, Dehradun</td><td class="t-sector">Creating Sustainable Livelihoods for Waste Workers by Creating Pavement Blocks from Waste Plastic</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">GermSAFE Water Technology, Mumbai</td><td class="t-sector">Microbial disinfection using Hydrodynamic cavitation</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">4</td><td class="t-name">Neuroplex Private Limited, Trivandrum, Kerala</td><td class="t-sector">AI Powered Video Content Analysis</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)<div class="annex-note">The startup has closed their operations and assigned IP rights to IOCL.</div></td></tr>
+          <tr><td class="sno">5</td><td class="t-name">EzeRx Health Tech Pvt Ltd., Kolkata</td><td class="t-sector">Non-Invasive, Non-Contact device for Bilirubin, Hemoglobin and oxygen saturation level measurement</td><td>Conceptual stage</td><td>Seed stage / early stage – early revenue<div class="annex-note">Startup has created a business out of the innovation and is generating revenue.</div></td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Krea Foods and Beverages Pvt Ltd, Bhubaneswar</td><td class="t-sector">Acryl-aid – The one stop solution to producing safe, nutritious and toxin-free processed food</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">7</td><td class="t-name">Emerging Tech Solutions, Mumbai</td><td class="t-sector">Design and Manufacturing of Low-Cost Indigenized Aviation Hoses</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)<div class="annex-note">The hoses provided by the startup did not meet the requirements of the field test. The startup has closed their operations.</div></td></tr>
+          <tr><td class="sno">8</td><td class="t-name">Nanosniff Technologies Pvt Ltd, Mumbai</td><td class="t-sector">Development of a Microsensor based Portable Detector of Refinery Toxic Gases such as SO2, H2S, &amp; CH4</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">9</td><td class="t-name">Solinas Integrity Pvt. Ltd., Chennai</td><td class="t-sector">A spherical robot for detection and localization of leaks and pilferage in Oil and Gas Pipelines</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">10</td><td class="t-name">Nanospan India Pvt. Ltd, Hyderabad</td><td class="t-sector">Graphene based Solid state Supercapacitor for Power and Energy Storage in EVs</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">11</td><td class="t-name">Shigan NexGen Technologies LLP, Haryana</td><td class="t-sector">Development of HCNG Engine Controller Unit (ECU) to meet BS-VI Emission norms</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">12</td><td class="t-name">Robotics and Scalability Technology, Gurugram</td><td class="t-sector">Automated inspection of storage tanks using crawlers</td><td>Conceptual stage</td><td>Foreclosed</td></tr>
+          <tr><td class="sno">13</td><td class="t-name">Demustango Technology Pvt. Ltd, Trivandrum, Kerala</td><td class="t-sector">Multipurpose Robot for Cleaning, Inspection of zones and surfaces in refinery tanks</td><td>Conceptual stage</td><td>Foreclosed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="annex-group">
+      <div class="annex-gtitle">Round 3 Projects</div>
+      <div class="tbl-scroll">
+        <table class="annex">
+          <thead><tr><th class="sno">S.No</th><th>Startup name</th><th>Project</th><th>At on-boarding</th><th>Status today</th></tr></thead>
+          <tbody>
+          <tr><td class="sno">1</td><td class="t-name">Corrosion Intelligence Pvt. Ltd</td><td class="t-sector">Data analysis of tank bottom and forecasting failure probability</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">2</td><td class="t-name">Cellark Powertech Pvt. Ltd</td><td class="t-sector">Lithium-Ion pouch cell Manufacturing with Nanoporous Silicon/Graphite Composite Anode</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">Proburgeon Pvt. Ltd</td><td class="t-sector">Intensified Reactors for efficient, safer, smaller and cost-effective chemical processes</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">4</td><td class="t-name">Rhomu Technologies Pvt. Ltd.</td><td class="t-sector">Cost-effective field test method for qualitative and quantitative determination of ethanol &amp; methanol in gasoline</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">5</td><td class="t-name">Edhaa Innovations Pvt. Ltd</td><td class="t-sector">ON-POINT: A Point of Care smart device for first-trimester screening of fetal chromosomal anomalies</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Urjahub (OPC) Pvt. Ltd</td><td class="t-sector">Development and demonstration of High power density fuel cell stack for Mobility Applications</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">7</td><td class="t-name">AHODS Technologies India Pvt. Ltd</td><td class="t-sector">A patented Hydrogen on-demand kit for saving fuel &amp; environment in ICE auto &amp; commercial application</td><td>Conceptual stage</td><td>Foreclosed</td></tr>
+          <tr><td class="sno">8</td><td class="t-name">Genrobotics Oil &amp; Gas Pvt. Ltd</td><td class="t-sector">Development of robotics tools for internal tank cleaning and inspection</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">9</td><td class="t-name">LVL Alpha Pvt. Ltd</td><td class="t-sector">Wearable Head Trauma Monitor and Bone-Conduction Communicator with Wrist-worn Health Tracker</td><td>Conceptual stage</td><td>Foreclosure under Progress</td></tr>
+          <tr><td class="sno">10</td><td class="t-name">iSpock Technologies Pvt. Ltd.</td><td class="t-sector">Theftnet type system – for early detection of pilferage</td><td>Conceptual stage</td><td>Pre-seed / Idea stage (PoC Established)</td></tr>
+          <tr><td class="sno">11</td><td class="t-name">Algo8 AI Pvt. Ltd.</td><td class="t-sector">AI based Online Expert System</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">12</td><td class="t-name">Greengine Environmental Technologies Pvt. Ltd</td><td class="t-sector">Cost effective carbon capture systems from Industrial Off Gases</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="annex-group">
+      <div class="annex-gtitle">Green Resolve Projects</div>
+      <div class="tbl-scroll">
+        <table class="annex">
+          <thead><tr><th class="sno">S.No</th><th>Startup name</th><th>Project</th><th>At on-boarding</th><th>Status today</th></tr></thead>
+          <tbody>
+          <tr><td class="sno">1</td><td class="t-name">World Impact Creation Pvt. Ltd., Cuttack</td><td class="t-sector">Plant based energy storage system – PLANTERY</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">2</td><td class="t-name">Aryo GreenTech, UP</td><td class="t-sector">Aluminium-ion batteries</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">Bharat Flow Analytics Pvt. Ltd., Noida</td><td class="t-sector">Intelligent Leak Detection System (ILDS) for Oil Pipelines</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">4</td><td class="t-name">Virayaa Green Energy Systems Pvt. Ltd., Hyderabad</td><td class="t-sector">Range-extended Electric LCVs with Fuel cell Hybrid system</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">5</td><td class="t-name">Perovskite Innovation Pvt. Ltd., Roorkee</td><td class="t-sector">Semi-transparent Perovskite Solar Cell aiming Net-Zero in Building Energy Management</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Bariflo Labs Pvt. Ltd., Bhubaneswar</td><td class="t-sector">Implementing water body rejuvenation for carbon sequestration and livelihood generation</td><td>Conceptual stage</td><td>PoC in Progress</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
