@@ -79,16 +79,11 @@ tbody td{padding:13px 20px;border-bottom:1px solid var(--border);color:var(--tex
 tbody tr:last-child td{border-bottom:0;}
 tbody tr{transition:background .15s ease;}
 
-/* HPCL — sector / startup hierarchy (differentiated by lines) */
-.row-sector td{font-weight:600;border-top:1px solid var(--border2);}
-.row-sector td:first-child{box-shadow:inset 3px 0 0 var(--accent);}
-.row-sector td.num{color:var(--accent2);}
-.row-startup td:first-child{padding-left:42px;color:var(--muted);font-weight:400;}
-.row-startup td.num{color:var(--text);font-weight:500;}
-.t-name{font-weight:500;}
+/* all rows share one uniform style, separated by lines */
+.t-name{font-weight:400;}
 .t-sector{color:var(--muted);font-weight:300;}
 
-/* total row */
+/* total row — same text, marked by a top line */
 .row-total td{font-weight:700;color:var(--text);border-top:2px solid var(--text);letter-spacing:.3px;}
 .row-total td.num{color:var(--text);}
 
@@ -165,16 +160,13 @@ footer .nav-logo-img img{width:80px;}
 
   <!-- HPCL TABLE -->
   <div class="tab-panel active" id="tab-hpcl">
-    <div class="tbl-head">
-      <div class="tbl-note">Amounts in ₹ lakhs. Sector rows show the sector total.</div>
-    </div>
     <div class="tbl-scroll">
       <table class="hpcl">
         <thead>
           <tr>
             <th>Sector / Startup</th>
-            <th class="num">Fund allocated</th>
-            <th class="num">Fund disbursed</th>
+            <th class="num">Fund allocated (₹ lakhs)</th>
+            <th class="num">Fund disbursed (₹ lakhs)</th>
           </tr>
         </thead>
         <tbody>
@@ -236,7 +228,7 @@ footer .nav-logo-img img{width:80px;}
   <!-- ONGC TABLE -->
   <div class="tab-panel" id="tab-ongc">
     <div class="tbl-head">
-      <div class="tbl-note">Amounts in ₹ lakhs. Includes MRPL share in the proportion ONGC : MRPL = 100 : 1. As on 31.03.2026.</div>
+      <div class="tbl-note">Includes MRPL share in the proportion ONGC : MRPL = 100 : 1. As on 31.03.2026.</div>
     </div>
     <div class="tbl-scroll">
       <table class="ongc">
@@ -245,8 +237,8 @@ footer .nav-logo-img img{width:80px;}
             <th class="sno">S.No</th>
             <th>Startup name</th>
             <th>Sector</th>
-            <th class="num">Fund allocated</th>
-            <th class="num">Fund disbursed</th>
+            <th class="num">Fund allocated (₹ lakhs)</th>
+            <th class="num">Fund disbursed (₹ lakhs)</th>
           </tr>
         </thead>
         <tbody>
