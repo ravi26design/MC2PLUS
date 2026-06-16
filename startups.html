@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Mc2-new.png?v=2">
+<meta name="theme-color" content="#f6f4ef">
+<title>Portfolio Startups — MC² Plus</title>
+<meta name="description" content="Startups backed by HPCL and ONGC across energy, deep-tech, mobility and sustainability — the MC² Plus portfolio.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&display=swap');
+
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --surface2:#fbfaf6;
+  --border:rgba(0,0,0,0.09); --border2:rgba(0,0,0,0.15);
+  --text:#002059; --muted:rgba(0,32,89,0.6);
+  --accent:#d4622a; --accent2:#b8521f;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;}
+a{color:inherit;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 48px;height:80px;
+  background:rgba(255,255,255,0.96);backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 30px rgba(0,0,0,0.06);
+}
+.nav-logo-img{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-logo-img img{width:64px;height:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none;height:100%;margin:0;}
+.nav-links li{display:flex;align-items:center;}
+.nav-links a{font-size:14px;font-weight:400;color:rgba(0,32,89,0.75);text-decoration:none;letter-spacing:0.2px;transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--text);}
+.nav-links a.active{color:var(--accent2);font-weight:500;}
+.nav-links li:last-child a{color:var(--accent2);font-weight:500;}
+.nav-toggle{display:none;}
+
+/* HEADER */
+.press-hero{padding:148px 48px 40px;}
+.press-title{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:-2px;line-height:1;}
+.press-title em{font-style:italic;font-weight:300;color:rgba(0,32,89,0.55);}
+.press-sub{font-size:16px;line-height:1.75;color:var(--muted);max-width:600px;font-weight:300;margin-top:18px;}
+
+/* STARTUP LIST */
+.st-wrap{padding:8px 48px 110px;}
+.st-group + .st-group{margin-top:52px;}
+.st-grouphead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
+.st-grouptag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;}
+.st-grouptag::before{content:'';display:block;width:24px;height:1px;background:var(--accent2);}
+.st-count{font-size:13px;color:var(--muted);font-weight:400;}
+.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.st-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:22px 24px;transition:border-color .2s,background .2s,transform .2s;
+}
+.st-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px);}
+.st-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--text);letter-spacing:-0.3px;line-height:1.25;}
+.st-sector{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;font-weight:300;}
+
+/* FOOTER */
+footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+footer .nav-logo-img img{width:80px;}
+.footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-note{font-size:12px;color:rgba(0,32,89,0.4);}
+
+@media (max-width:900px){
+  nav{padding:0 24px;}
+  .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin:-8px;padding:8px;background:none;border:0;cursor:pointer;}
+  .nav-toggle span{display:block;width:100%;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s;}
+  nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  nav.open .nav-toggle span:nth-child(2){opacity:0;}
+  nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  nav .nav-links{
+    position:fixed;top:80px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;height:auto;margin:0;
+    padding:8px 24px 16px;background:rgba(255,255,255,0.98);backdrop-filter:blur(24px);
+    border-bottom:1px solid var(--border);box-shadow:0 24px 40px rgba(0,0,0,0.06);
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease;
+  }
+  nav.open .nav-links{transform:translateY(0);opacity:1;pointer-events:auto;}
+  nav .nav-links li{display:block;width:100%;}
+  nav .nav-links a{display:block;width:100%;padding:14px 2px;font-size:16px;border-bottom:1px solid var(--border);}
+  nav .nav-links li:last-child a{border-bottom:0;}
+  .press-hero{padding:128px 24px 36px;}
+  .st-wrap{padding:8px 24px 80px;}
+  .st-grid{grid-template-columns:repeat(2,1fr);}
+  footer{flex-direction:column;text-align:center;gap:16px;padding:32px 24px;}
+}
+@media (max-width:600px){
+  .st-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo-img">
+    <img src="Mc2-new.png?v=2" alt="MC2 Plus Logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#pillars">What we offer</a></li>
+    <li><a href="index.html#process">How it works</a></li>
+    <li><a href="index.html#who">Who can apply</a></li>
+    <li><a href="index.html#board">Board</a></li>
+    <li><a href="startups.html" class="active">Startups</a></li>
+    <li><a href="press.html">Press Release</a></li>
+    <li><a href="index.html#apply">Apply now</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HEADER -->
+<section class="press-hero">
+  <h1 class="press-title">Portfolio <em>startups.</em></h1>
+  <p class="press-sub">Ventures backed by India's oil &amp; gas majors — HPCL and ONGC — across energy, deep-tech, mobility, and sustainability.</p>
+</section>
+
+<section class="st-wrap">
+
+  <!-- HPCL -->
+  <div class="st-group">
+    <div class="st-grouphead">
+      <span class="st-grouptag">Backed by HPCL</span>
+      <span class="st-count">29 ventures</span>
+    </div>
+    <div class="st-grid">
+      <div class="st-card"><div class="st-name">Maraal Aerospace</div><div class="st-sector">Aerospace &amp; Defence</div></div>
+      <div class="st-card"><div class="st-name">Tjycheejuno Speciality Tyres</div><div class="st-sector">Automotive Technology</div></div>
+      <div class="st-card"><div class="st-name">Chkfake Brand Protection Solutions</div><div class="st-sector">Consumer Safety &amp; Digital Verification</div></div>
+      <div class="st-card"><div class="st-name">ASN Fuels</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Clairviz Technology Systems</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Constems AI Systems</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Digas</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">EcoOpus Agriventures</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Esmito Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Hybrid Super Tech Engineering</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Kshumat Energy</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Magenta EV Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Petrobot Technologies</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">RMRS Electric Vehicles</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Rosefield Energy Tech</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Tranzmeo IT Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Unesar</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Voltrez Tech</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
+      <div class="st-card"><div class="st-name">Red Room Technology</div><div class="st-sector">Healthcare</div></div>
+      <div class="st-card"><div class="st-name">Aadyam Infotech</div><div class="st-sector">Industrial Technology</div></div>
+      <div class="st-card"><div class="st-name">Autogrid Mobility</div><div class="st-sector">Industrial Technology</div></div>
+      <div class="st-card"><div class="st-name">Hanu AI</div><div class="st-sector">Industrial Technology</div></div>
+      <div class="st-card"><div class="st-name">Respirer Living Sciences</div><div class="st-sector">Industrial Technology</div></div>
+      <div class="st-card"><div class="st-name">Simulanis Solutions</div><div class="st-sector">Industrial Technology</div></div>
+      <div class="st-card"><div class="st-name">Innoctive Technologies (CargoFL)</div><div class="st-sector">Mobility</div></div>
+      <div class="st-card"><div class="st-name">Rodeo Digital</div><div class="st-sector">Retail Technology</div></div>
+      <div class="st-card"><div class="st-name">HPS Lab Designs</div><div class="st-sector">Safety</div></div>
+      <div class="st-card"><div class="st-name">Evlogia Eco Care</div><div class="st-sector">Sustainability</div></div>
+      <div class="st-card"><div class="st-name">Saltech Design Labs</div><div class="st-sector">Sustainability</div></div>
+    </div>
+  </div>
+
+  <!-- ONGC -->
+  <div class="st-group">
+    <div class="st-grouphead">
+      <span class="st-grouptag">Backed by ONGC</span>
+      <span class="st-count">27 ventures</span>
+    </div>
+    <div class="st-grid">
+      <div class="st-card"><div class="st-name">Planys Technologies</div><div class="st-sector">Underwater robotic inspection</div></div>
+      <div class="st-card"><div class="st-name">String Bio</div><div class="st-sector">Converting methane to edible protein</div></div>
+      <div class="st-card"><div class="st-name">Chakr Innovation</div><div class="st-sector">Carbon capture from engine exhaust</div></div>
+      <div class="st-card"><div class="st-name">Sagar Defence Engineering</div><div class="st-sector">Unmanned aerial &amp; surface vehicles</div></div>
+      <div class="st-card"><div class="st-name">Logic Ladder Technologies</div><div class="st-sector">ESG compliance service provider</div></div>
+      <div class="st-card"><div class="st-name">Sparkyo Technology</div><div class="st-sector">Deep-tech asset tracking</div></div>
+      <div class="st-card"><div class="st-name">Constems AI Systems</div><div class="st-sector">Deep-tech online inspection</div></div>
+      <div class="st-card"><div class="st-name">VDT Pipeline Integrity Services</div><div class="st-sector">Pipeline inspection</div></div>
+      <div class="st-card"><div class="st-name">CYRRUP Solutions</div><div class="st-sector">Diesel theft detection &amp; online inspection</div></div>
+      <div class="st-card"><div class="st-name">Pepfuels Technologies</div><div class="st-sector">Fuel supply at doorstep</div></div>
+      <div class="st-card"><div class="st-name">Kshumat Energy</div><div class="st-sector">Manufacturing bio-diesel</div></div>
+      <div class="st-card"><div class="st-name">Simulanis Solutions</div><div class="st-sector">Deep-tech online safety &amp; plant training modules</div></div>
+      <div class="st-card"><div class="st-name">Aavritti Technologies</div><div class="st-sector">Sub-surface buried material detection</div></div>
+      <div class="st-card"><div class="st-name">StrautX Technologies</div><div class="st-sector">Solar energy</div></div>
+      <div class="st-card"><div class="st-name">Blujay Robotics</div><div class="st-sector">Fire-fighting robots</div></div>
+      <div class="st-card"><div class="st-name">WellRx Technologies</div><div class="st-sector">Oil-well drilling &amp; well-intervention tools</div></div>
+      <div class="st-card"><div class="st-name">Photom Technologies</div><div class="st-sector">Waterless solar panel cleaning systems</div></div>
+      <div class="st-card"><div class="st-name">Gascomp Fueltech (India)</div><div class="st-sector">Gas compressor manufacturer</div></div>
+      <div class="st-card"><div class="st-name">Petrobot Technologies</div><div class="st-sector">Robotic inspection of tanks, pipelines &amp; assets</div></div>
+      <div class="st-card"><div class="st-name">Aloe Ecell</div><div class="st-sector">Aloevera-based batteries</div></div>
+      <div class="st-card"><div class="st-name">Dash Dynamic</div><div class="st-sector">Wireless charging</div></div>
+      <div class="st-card"><div class="st-name">Vayuguard Climate Tech</div><div class="st-sector">Domestic &amp; industrial air purifiers</div></div>
+      <div class="st-card"><div class="st-name">Saltech</div><div class="st-sector">Converting waste into construction material</div></div>
+      <div class="st-card"><div class="st-name">Angelbot AI</div><div class="st-sector">AI / ML</div></div>
+      <div class="st-card"><div class="st-name">Kairus Energies</div><div class="st-sector">Lithium &amp; sodium-ion batteries</div></div>
+      <div class="st-card"><div class="st-name">Watthour</div><div class="st-sector">Sodium-ion battery cell manufacturing</div></div>
+      <div class="st-card"><div class="st-name">Nikol Automotive</div><div class="st-sector">EV charger manufacturer &amp; charging network</div></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="nav-logo-img">
+    <img src="Mc2-new.png?v=2" alt="MC2 Plus Logo">
+  </a>
+  <ul class="footer-links">
+    <li><a href="index.html#about">About MoPNG</a></li>
+    <li><a href="startups.html">Startups</a></li>
+    <li><a href="press.html">Press Release</a></li>
+    <li><a href="index.html#contact">Contact us</a></li>
+    <li><a href="index.html#">Privacy policy</a></li>
+  </ul>
+  <div class="footer-note">A Ministry of Petroleum and Natural Gas initiative</div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('nav'),toggle=document.querySelector('.nav-toggle');
+  if(!nav||!toggle)return;
+  toggle.addEventListener('click',function(){var o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false');});
+  nav.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
+})();
+</script>
+</body>
+</html>
