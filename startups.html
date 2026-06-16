@@ -86,6 +86,9 @@ tbody tr{transition:background .15s ease;}
 .annex-gtitle{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:-0.3px;margin-bottom:14px;}
 .annex-note{font-size:12px;color:var(--muted);font-weight:300;margin-top:5px;line-height:1.45;}
 table.annex{min-width:900px;}
+table.gail{min-width:920px;}
+table.gail td{font-size:13.5px;}
+table.gail td.t-sector{max-width:520px;}
 table.annex td{font-size:13.5px;}
 
 /* total row — same text, marked by a top line */
@@ -162,6 +165,7 @@ footer .nav-logo-img img{width:80px;}
     <button class="tab active" data-tab="hpcl" role="tab">Investments by HPCL</button>
     <button class="tab" data-tab="ongc" role="tab">Investments by ONGC</button>
     <button class="tab" data-tab="annex" role="tab">Annexure</button>
+    <button class="tab" data-tab="gail" role="tab">GAIL Startups</button>
   </div>
 
   <!-- HPCL TABLE -->
@@ -280,7 +284,6 @@ footer .nav-logo-img img{width:80px;}
 
   <!-- ANNEXURE -->
   <div class="tab-panel" id="tab-annex">
-    <div class="tbl-head"><div class="tbl-note">IOCL startups onboarded across funding rounds. Status as reported.</div></div>
     <div class="annex-group">
       <div class="annex-gtitle">Round 1 Projects</div>
       <div class="tbl-scroll">
@@ -362,6 +365,56 @@ footer .nav-logo-img img{width:80px;}
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+
+  <!-- GAIL STARTUPS -->
+  <div class="tab-panel" id="tab-gail">
+    <div class="tbl-scroll">
+      <table class="gail">
+        <thead><tr><th class="sno">Sl No</th><th>Startup name</th><th>Sector / Area of working</th><th>Brief</th></tr></thead>
+        <tbody>
+          <tr><td class="sno">1</td><td class="t-name">JV Foodworks Pvt. Ltd.</td><td>Health &amp; Wellness Food</td><td class="t-sector">Manufacturing healthy &amp; nutritional snacks -fortified with micro vitamins at low cost for semi urban area</td></tr>
+          <tr><td class="sno">2</td><td class="t-name">Bhagwandas Retail (Lal 10) Pvt. Ltd.</td><td>E-Commerce</td><td class="t-sector">The Start-Up has developed a technology driven B2B marketplace for marketing products of grass-root artisans operating from villages.</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">Persapien Innovations Pvt. Ltd.</td><td>Healthcare</td><td class="t-sector">The Start-Up has developed a nose filter for purification of air for breathing and filter for Car AC. It is a disposable filter.</td></tr>
+          <tr><td class="sno">4</td><td class="t-name">Tycheejuno Speciality Tyres Pvt. Ltd.</td><td>Automotive Component</td><td class="t-sector">It has developed Burst Preventive Puncture Curative (BPPC) tyres for 2-wheelers and 4 wheelers.</td></tr>
+          <tr><td class="sno">5</td><td class="t-name">Tache Technologies Pvt. Ltd.</td><td>Data Analytics</td><td class="t-sector">The Start-up is a Market research company and has developed Android based Apps for companies to get market insights through reliable information</td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Kshumat Energy Pvt. Ltd.</td><td>Bio Fuel</td><td class="t-sector">The Start - up has set -up a plant for manufacturing of bio-fuel from various renewable raw materials like fatty acids, soya, sunflower, Palm Stearate.</td></tr>
+          <tr><td class="sno">7</td><td class="t-name">R D Grow Green India Pvt. Ltd.</td><td>CleanTech</td><td class="t-sector">The Start - Up has developed a technology for treatment of contaminated water by Electrocoagulation technique which is a chemical-less process and environment friendly</td></tr>
+          <tr><td class="sno">8</td><td class="t-name">Zunik Energies Pvt. Ltd.</td><td>Renewable Energy</td><td class="t-sector">The Start - Up is developing an energy efficient Inverter which is suitable for Renewable Energy Applications.</td></tr>
+          <tr><td class="sno">9</td><td class="t-name">Arcturus Business Solutions Pvt. Ltd.</td><td>IoT / AI</td><td class="t-sector">The Start - Up has developed AI based platform (AIonAsset) for Asset monitoring and performance enhancement by analyzing Images and Video data captured through CCTV and Drones on real time basis</td></tr>
+          <tr><td class="sno">10</td><td class="t-name">Prayogik Technologies Pvt. Ltd.</td><td>Renewable Energy</td><td class="t-sector">The Start-Up has developed a Thermo- Electric Generator (TEG) to generate DC Power at remote areas</td></tr>
+          <tr><td class="sno">11</td><td class="t-name">Kriya Labs Pvt. Ltd.</td><td>CleanTech</td><td class="t-sector">The Start - Up is developing chemical process by which agro residues can be converted into cellulosic pulp which can be used for making paper, tableware etc</td></tr>
+          <tr><td class="sno">12</td><td class="t-name">Sarvodaya Infotech (Truck Suvidha)</td><td>Logistics</td><td class="t-sector">The Start - Up has developed a large data-base of Fleet owners and obtains real-time information about Trucks to improve utilization and provides value proposition to both Consignors and Fleet owners.</td></tr>
+          <tr><td class="sno">13</td><td class="t-name">Vasitars Pvt. Ltd.</td><td>Oil and Gas</td><td class="t-sector">The Start - Up has developed an advanced composite for carrying out Pipeline repair without undertaking hot work. It is also developing moisture curable polyurethane resin for easy and quick repairing of leaking / non-leaking defects in oil/gas pipelines.</td></tr>
+          <tr><td class="sno">14</td><td class="t-name">VDT Pipeline Integrity Solutions Pvt. Ltd.</td><td>Oil and Gas</td><td class="t-sector">The Start-Up is developing an Inline inspection tool (Magnetic Flux Leakage (MFL) type) for assessment of pipeline defects in Oil &amp; Gas pipelines.</td></tr>
+          <tr><td class="sno">15</td><td class="t-name">IROV Technologies Pvt. Ltd.</td><td>Robotics</td><td class="t-sector">The Start-Up has developed a Underwater drones / ROVs for inspection of critical Infrastructure like bridges on water bodies, Offshore platforms etc.</td></tr>
+          <tr><td class="sno">16</td><td class="t-name">GEO Climate Risk Solutions Pvt. Ltd.</td><td>ESG</td><td class="t-sector">Tha start - Up has developed Risk and Sustainability Analysis Tool for Risk Assessment in a GIS enabled platform.</td></tr>
+          <tr><td class="sno">17</td><td class="t-name">FeatherDyn Pvt. Ltd.</td><td>Aerospace / Drones</td><td class="t-sector">The Start-Up is developing a semi-autonomous UAV equipped with thermal and visual camera to enable faster, reliable, and cost-effective pipeline inspection for Pipe Line Monitoring.</td></tr>
+          <tr><td class="sno">18</td><td class="t-name">Orxa Energies Pvt. Ltd.</td><td>EV / Battery</td><td class="t-sector">The Start - up is developing Battery packs for swapping of Batteries for Shared Mobility especially for two wheelers and a High power e-bike</td></tr>
+          <tr><td class="sno">19</td><td class="t-name">Quanteon Powertrain Pvt. Ltd.</td><td>EV Powertrain</td><td class="t-sector">It is developing In-Wheel-Axial Flux Motor with 95% regenerative braking capability to increase the vehicle running range.</td></tr>
+          <tr><td class="sno">20</td><td class="t-name">Yali Mobility Pvt. Ltd.</td><td>EV</td><td class="t-sector">The Start - Up is developing affordable electric vehicle for persons with locomotor disability.</td></tr>
+          <tr><td class="sno">21</td><td class="t-name">C-Electric Automotive Drive Pvt. Ltd.</td><td>EV Electronics</td><td class="t-sector">Manufacturer of Controllers for brushless motor Powertrains suitable for Indian conditions for 2 &amp; 3 wheelers.</td></tr>
+          <tr><td class="sno">22</td><td class="t-name">Pi Beam Labs Pvt. Ltd.</td><td>EV</td><td class="t-sector">The Start - Up is manufacturing micro-mobility Electric Vehicles and associated technologies.</td></tr>
+          <tr><td class="sno">23</td><td class="t-name">Cleanergy Tech Solutions Pvt. Ltd.</td><td>CBG</td><td class="t-sector">The Start - Up is engaged in Biogas Technology, developed indigenously, to process different tlpes of organic waste like food waste, cow dung, poultry litter, agricultural waste, etc</td></tr>
+          <tr><td class="sno">24</td><td class="t-name">Zonta Infratech Pvt. Ltd.</td><td>Waste to Energy</td><td class="t-sector">To develop Solid Waste Management Projects including Modern Waste Collection Systems, Waste to Energy (WTE)/ Waste to Bio-Gas Plants)</td></tr>
+          <tr><td class="sno">25</td><td class="t-name">CEID Consultants and Engineering Pvt. Ltd.</td><td>CBG Technology</td><td class="t-sector">Provides turnkey services of design, engg., manufacturing, supply &amp; erection of equipment, testing and commissioning of biogas generation plant.</td></tr>
+          <tr><td class="sno">26</td><td class="t-name">LR Energy Vrindavan Pvt. Ltd.</td><td>CBG</td><td class="t-sector">To set up 5 TPD CBG Plant at Sonipat for supplying CBG gas in CGD GA area near Meerut U.P. Feedstock is animal dung, agricultural and sugar industry waste</td></tr>
+          <tr><td class="sno">27</td><td class="t-name">Cargosite Ventures Pvt. Ltd.</td><td>Logistics</td><td class="t-sector">Providing one stop solution for entire international logistics supply chain through online platform</td></tr>
+          <tr><td class="sno">28</td><td class="t-name">Xyma Analytics Pvt. Ltd.</td><td>Sensors &amp; IoT</td><td class="t-sector">Developing a single ultrasonic waveguide sensor and an IoT (X-IoT) module which helps in transmitting the real time temperature data from remote locations to site and also helps to monitor Corrosion Under Insulation (CUI) of high temperature insulated pipelines and process efficiency of industry</td></tr>
+          <tr><td class="sno">29</td><td class="t-name">Good Move Logistics and Transport Pvt. Ltd.</td><td>Logistics</td><td class="t-sector">Provide reliable end-to-end city logistics solutions for MSMEs in Chennai and beyond by using self-developed three apps for intra-city logistics service (for shipper, consolidation center manager and trucker), as a technology solution for enabling consolidation and for improved efficiencies in logistic</td></tr>
+          <tr><td class="sno">30</td><td class="t-name">Ducere Technologies Pvt. Ltd.</td><td>Health Tech</td><td class="t-sector">Developed world&#x27;s first smart footwear in the brand name &#x27;Lechal&#x27;. It is a solution to prevent falls among elders and provide a quick way to get help in case of a fall event</td></tr>
+          <tr><td class="sno">31</td><td class="t-name">Upkram Technologies Pvt. Ltd.</td><td>FinTech</td><td class="t-sector">To create innovative, digitally enabled and technology driven lending solutions catering to the diverse credit needs of the borrowers</td></tr>
+          <tr><td class="sno">32</td><td class="t-name">Nawgati Tech Pvt. Ltd.</td><td>Mobility Tech</td><td class="t-sector">Developed congestion Management system and compliance reporting system on real time basis for fuel stations on B2B front and a mobile based fueling appl fro on B2C front</td></tr>
+          <tr><td class="sno">33</td><td class="t-name">Intellicon Technologies Pvt. Ltd.</td><td>Industrial IoT / EV</td><td class="t-sector">Developing IoT and wifi enabled indigenouse Fast and Smart EV chargers for 2 &amp; 3 wheelers with user interface.</td></tr>
+          <tr><td class="sno">34</td><td class="t-name">Dream Aerospace Technologies Pvt. Ltd.</td><td>Aerospace</td><td class="t-sector">Start-Up engaged in the business of manufacturing various propulsion system, modifying, repairing and refurbishing products of various kinds for personal and commercial use.</td></tr>
+          <tr><td class="sno">35</td><td class="t-name">Royal Bengal Greentech Pvt. Ltd.</td><td>CleanTech</td><td class="t-sector">Start-Up has developed Bio-plastic from waste broken rice which has mechanical properties comparable to Petro-plastic of same thickness and priced at par with Petro-plastic. The Start-Up also engaged in manufacturing of eco friendly lubricant.</td></tr>
+          <tr><td class="sno">36</td><td class="t-name">Manjha Technologies Pvt. Ltd.</td><td>AgriTech</td><td class="t-sector">M/s Manjha Technologies Pvt Ltd has developed a comprehensive online platform for the aquaculture sector, offering services such as quality input supply, farm consultancy, credit and insurance support, and market linkage, while also enabling direct connections between seed suppliers and farmers. Additionally, the platform features community engagement through &#x27;Matsya Charcha&#x27; and provides shrimp/fish feed, medicines, and IoT devices that monitor water parameters like pH and DO to support efficient farm management.</td></tr>
+          <tr><td class="sno">37</td><td class="t-name">Eagle AI Pvt. Ltd.</td><td>Healthcare AI</td><td class="t-sector">M/s EagleAI Pvt Ltd has developed an AI-powered device, ZIVANKH, which enables time-efficient diagnosis in OPDs/IPDs by interacting with patients in their local language and generating a pre-diagnosis report for doctors. This innovation reduces consultation time, enhances hospital revenue, and aims to bridge rural-urban healthcare gaps through AI-enabled SMART Clinics.</td></tr>
+          <tr><td class="sno">38</td><td class="t-name">REVY Environmental Solutions Pvt. Ltd.</td><td>BioTech &amp; CBG</td><td class="t-sector">the Start Up has developed &quot;Designer Bio culture&quot; using IP protected combinations of bacteria and other microorganisms, in the form of &#x27;Anaerobic Granulated Sludge&#x27;, &#x27;Biomass Growth Enhancement Formulations (BGEF)&#x27;, and solutions enabling quick commissioning, improved quality and quantity of biogas, and reduced operational issues, thereby lowering the operational cost of biogas generation plants.</td></tr>
+          <tr><td class="sno">39</td><td class="t-name">Indigenous Energy Storage Technologies Pvt. Ltd.</td><td>Energy Storage</td><td class="t-sector">the Start-Up has developed Sodium-Ion Batteries (SIB) and their components like Hard Carbon (BioBlack™), Sodium-ion cathode, Sodium-ion electrolyte, etc. using bio-waste/agricultural waste and earth abundant materials like Sodium for various industrial applications like solar and wind grid storage, Electric Vehicles (EV) 2Ws/3Ws, UPS/Inverter batteries etc</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
