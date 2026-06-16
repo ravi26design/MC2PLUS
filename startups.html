@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="Mc2-new.png?v=2">
 <meta name="theme-color" content="#f6f4ef">
-<title>Portfolio Startups — MC² Plus</title>
-<meta name="description" content="Startups backed by HPCL and ONGC across energy, deep-tech, mobility and sustainability — the MC² Plus portfolio.">
+<title>List of Startups — MC² Plus</title>
+<meta name="description" content="List of startups sponsored by partners — HPCL and ONGC investment portfolio under MC² Plus.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&display=swap');
 
@@ -25,7 +25,7 @@ a{color:inherit;}
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 48px;height:80px;
+  padding:0 44px;height:80px;
   background:rgba(255,255,255,0.96);backdrop-filter:blur(24px);
   border-bottom:1px solid rgba(0,0,0,0.1);box-shadow:0 1px 30px rgba(0,0,0,0.06);
 }
@@ -40,29 +40,41 @@ nav{
 .nav-toggle{display:none;}
 
 /* HEADER */
-.press-hero{padding:148px 48px 40px;}
-.press-title{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:-2px;line-height:1;}
+.press-hero{padding:148px 44px 40px;}
+.press-title{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,60px);font-weight:700;letter-spacing:-1.5px;line-height:1.05;}
 .press-title em{font-style:italic;font-weight:300;color:rgba(0,32,89,0.55);}
-.press-sub{font-size:16px;line-height:1.75;color:var(--muted);max-width:600px;font-weight:300;margin-top:18px;}
+.press-sub{font-size:16px;line-height:1.75;color:var(--muted);max-width:620px;font-weight:300;margin-top:18px;}
 
-/* STARTUP LIST */
-.st-wrap{padding:8px 48px 110px;}
-.st-group + .st-group{margin-top:52px;}
-.st-grouphead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
-.st-grouptag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;}
-.st-grouptag::before{content:'';display:block;width:24px;height:1px;background:var(--accent2);}
-.st-count{font-size:13px;color:var(--muted);font-weight:400;}
-.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.st-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;
-  padding:22px 24px;transition:border-color .2s,background .2s,transform .2s;
+/* TABLES */
+.tbl-wrap-outer{padding:8px 44px 110px;}
+.tbl-group + .tbl-group{margin-top:52px;}
+.tbl-head{margin-bottom:16px;}
+.tbl-tag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.tbl-tag::before{content:'';display:block;width:24px;height:1px;background:var(--accent2);}
+.tbl-title{font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,28px);font-weight:600;letter-spacing:-0.5px;}
+.tbl-note{font-size:13px;color:var(--muted);margin-top:6px;font-weight:300;}
+.tbl-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:14px;background:var(--surface);-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead th{
+  position:sticky;top:0;background:var(--surface2);text-align:left;
+  padding:13px 18px;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--accent2);font-weight:600;border-bottom:1px solid var(--border);white-space:nowrap;
 }
-.st-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px);}
-.st-name{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--text);letter-spacing:-0.3px;line-height:1.25;}
-.st-sector{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;font-weight:300;}
+th.num,td.num{text-align:right;white-space:nowrap;}
+th.sno,td.sno{text-align:center;width:54px;color:var(--muted);}
+tbody td{padding:12px 18px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top;}
+tbody tr:last-child td{border-bottom:0;}
+.row-sector td{font-weight:600;background:rgba(0,32,89,0.035);}
+.row-startup td:first-child{padding-left:36px;color:var(--muted);font-weight:400;}
+.row-startup td.num{color:var(--text);}
+.row-total td{font-weight:700;background:var(--surface2);border-top:2px solid var(--border2);}
+.t-name{font-weight:500;}
+.t-sector{color:var(--muted);font-weight:300;}
+table.ongc{min-width:760px;}
+table.hpcl{min-width:560px;}
 
 /* FOOTER */
-footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:36px 44px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
 footer .nav-logo-img img{width:80px;}
 .footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
 .footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s;}
@@ -87,12 +99,8 @@ footer .nav-logo-img img{width:80px;}
   nav .nav-links a{display:block;width:100%;padding:14px 2px;font-size:16px;border-bottom:1px solid var(--border);}
   nav .nav-links li:last-child a{border-bottom:0;}
   .press-hero{padding:128px 24px 36px;}
-  .st-wrap{padding:8px 24px 80px;}
-  .st-grid{grid-template-columns:repeat(2,1fr);}
+  .tbl-wrap-outer{padding:8px 24px 80px;}
   footer{flex-direction:column;text-align:center;gap:16px;padding:32px 24px;}
-}
-@media (max-width:600px){
-  .st-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -120,85 +128,133 @@ footer .nav-logo-img img{width:80px;}
 
 <!-- HEADER -->
 <section class="press-hero">
-  <h1 class="press-title">Portfolio <em>startups.</em></h1>
-  <p class="press-sub">Ventures backed by India's oil &amp; gas majors — HPCL and ONGC — across energy, deep-tech, mobility, and sustainability.</p>
+  <h1 class="press-title">List of startups sponsored by <em>partners.</em></h1>
+  <p class="press-sub">Ventures funded by India's oil &amp; gas majors — HPCL and ONGC — across energy, deep-tech, mobility, and sustainability.</p>
 </section>
 
-<section class="st-wrap">
+<section class="tbl-wrap-outer">
 
-  <!-- HPCL -->
-  <div class="st-group">
-    <div class="st-grouphead">
-      <span class="st-grouptag">Backed by HPCL</span>
-      <span class="st-count">29 ventures</span>
+  <!-- HPCL TABLE -->
+  <div class="tbl-group">
+    <div class="tbl-head">
+      <div class="tbl-tag">Backed by HPCL</div>
+      <div class="tbl-title">Investments by HPCL</div>
+      <div class="tbl-note">Amounts in ₹ lakhs. Sector rows show the sector total.</div>
     </div>
-    <div class="st-grid">
-      <div class="st-card"><div class="st-name">Maraal Aerospace</div><div class="st-sector">Aerospace &amp; Defence</div></div>
-      <div class="st-card"><div class="st-name">Tjycheejuno Speciality Tyres</div><div class="st-sector">Automotive Technology</div></div>
-      <div class="st-card"><div class="st-name">Chkfake Brand Protection Solutions</div><div class="st-sector">Consumer Safety &amp; Digital Verification</div></div>
-      <div class="st-card"><div class="st-name">ASN Fuels</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Clairviz Technology Systems</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Constems AI Systems</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Digas</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">EcoOpus Agriventures</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Esmito Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Hybrid Super Tech Engineering</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Kshumat Energy</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Magenta EV Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Petrobot Technologies</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">RMRS Electric Vehicles</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Rosefield Energy Tech</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Tranzmeo IT Solutions</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Unesar</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Voltrez Tech</div><div class="st-sector">Energy &amp; Clean Energy</div></div>
-      <div class="st-card"><div class="st-name">Red Room Technology</div><div class="st-sector">Healthcare</div></div>
-      <div class="st-card"><div class="st-name">Aadyam Infotech</div><div class="st-sector">Industrial Technology</div></div>
-      <div class="st-card"><div class="st-name">Autogrid Mobility</div><div class="st-sector">Industrial Technology</div></div>
-      <div class="st-card"><div class="st-name">Hanu AI</div><div class="st-sector">Industrial Technology</div></div>
-      <div class="st-card"><div class="st-name">Respirer Living Sciences</div><div class="st-sector">Industrial Technology</div></div>
-      <div class="st-card"><div class="st-name">Simulanis Solutions</div><div class="st-sector">Industrial Technology</div></div>
-      <div class="st-card"><div class="st-name">Innoctive Technologies (CargoFL)</div><div class="st-sector">Mobility</div></div>
-      <div class="st-card"><div class="st-name">Rodeo Digital</div><div class="st-sector">Retail Technology</div></div>
-      <div class="st-card"><div class="st-name">HPS Lab Designs</div><div class="st-sector">Safety</div></div>
-      <div class="st-card"><div class="st-name">Evlogia Eco Care</div><div class="st-sector">Sustainability</div></div>
-      <div class="st-card"><div class="st-name">Saltech Design Labs</div><div class="st-sector">Sustainability</div></div>
+    <div class="tbl-scroll">
+      <table class="hpcl">
+        <thead>
+          <tr>
+            <th>Sector / Startup</th>
+            <th class="num">Fund allocated</th>
+            <th class="num">Fund disbursed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-sector"><td>Aerospace &amp; Defence</td><td class="num">200.00</td><td class="num">88.99</td></tr>
+          <tr class="row-startup"><td>Maraal Aerospace</td><td class="num">200.00</td><td class="num">88.99</td></tr>
+
+          <tr class="row-sector"><td>Automotive Technology</td><td class="num">100.00</td><td class="num">100.00</td></tr>
+          <tr class="row-startup"><td>Tjycheejuno Speciality Tyres Pvt Ltd</td><td class="num">100.00</td><td class="num">100.00</td></tr>
+
+          <tr class="row-sector"><td>Consumer Safety &amp; Digital Verification</td><td class="num">100.00</td><td class="num">39.99</td></tr>
+          <tr class="row-startup"><td>Chkfake Brand Protection Solutions Pvt Limited</td><td class="num">100.00</td><td class="num">39.99</td></tr>
+
+          <tr class="row-sector"><td>Energy &amp; Clean Energy</td><td class="num">1612.91</td><td class="num">1592.88</td></tr>
+          <tr class="row-startup"><td>ASN Fuels Pvt Ltd</td><td class="num">99.89</td><td class="num">99.89</td></tr>
+          <tr class="row-startup"><td>Clairviz Technology Systems Pvt Ltd</td><td class="num">64.04</td><td class="num">64.04</td></tr>
+          <tr class="row-startup"><td>Constems AI Systems Pvt Ltd</td><td class="num">99.97</td><td class="num">99.97</td></tr>
+          <tr class="row-startup"><td>Digas Pvt Limited</td><td class="num">59.98</td><td class="num">59.98</td></tr>
+          <tr class="row-startup"><td>EcoOpus Agriventures Limited</td><td class="num">37.90</td><td class="num">37.90</td></tr>
+          <tr class="row-startup"><td>Esmito Solutions Pvt. Ltd</td><td class="num">99.97</td><td class="num">99.97</td></tr>
+          <tr class="row-startup"><td>Hybrid Super Tech Engg Pvt Limited</td><td class="num">94.95</td><td class="num">94.95</td></tr>
+          <tr class="row-startup"><td>Kshumat Energy Pvt Ltd</td><td class="num">250.00</td><td class="num">250.00</td></tr>
+          <tr class="row-startup"><td>Magenta EV Solutions Pvt Ltd</td><td class="num">99.14</td><td class="num">99.14</td></tr>
+          <tr class="row-startup"><td>Petrobot Technologies Pvt Ltd</td><td class="num">215.00</td><td class="num">215.00</td></tr>
+          <tr class="row-startup"><td>RMRS Electric Vehicles Pvt Limited</td><td class="num">99.36</td><td class="num">99.36</td></tr>
+          <tr class="row-startup"><td>Rosefield Energy Tech Pvt Ltd</td><td class="num">97.96</td><td class="num">97.96</td></tr>
+          <tr class="row-startup"><td>Tranzmeo IT Solutions Pvt Ltd</td><td class="num">96.60</td><td class="num">96.60</td></tr>
+          <tr class="row-startup"><td>Unesar Pvt Ltd</td><td class="num">98.15</td><td class="num">98.15</td></tr>
+          <tr class="row-startup"><td>Voltrez Tech Pvt Ltd</td><td class="num">100.00</td><td class="num">79.96</td></tr>
+
+          <tr class="row-sector"><td>Healthcare</td><td class="num">60.00</td><td class="num">60.00</td></tr>
+          <tr class="row-startup"><td>Red Room Technology Pvt Limited</td><td class="num">60.00</td><td class="num">60.00</td></tr>
+
+          <tr class="row-sector"><td>Industrial Technology</td><td class="num">616.87</td><td class="num">536.88</td></tr>
+          <tr class="row-startup"><td>Aadyam Infotech Pvt Ltd</td><td class="num">68.04</td><td class="num">68.04</td></tr>
+          <tr class="row-startup"><td>Autogrid Mobility Pvt Ltd</td><td class="num">99.99</td><td class="num">100.00</td></tr>
+          <tr class="row-startup"><td>Hanu AI Pvt Ltd</td><td class="num">250.00</td><td class="num">170.00</td></tr>
+          <tr class="row-startup"><td>Respirer Living Sciences Pvt Ltd</td><td class="num">99.85</td><td class="num">99.85</td></tr>
+          <tr class="row-startup"><td>Simulanis Solutions Pvt Ltd</td><td class="num">98.99</td><td class="num">98.99</td></tr>
+
+          <tr class="row-sector"><td>Mobility</td><td class="num">99.84</td><td class="num">99.84</td></tr>
+          <tr class="row-startup"><td>Innoctive Technologies Pvt Ltd (CargoFL)</td><td class="num">99.84</td><td class="num">99.84</td></tr>
+
+          <tr class="row-sector"><td>Retail Technology (RetailTech)</td><td class="num">99.94</td><td class="num">100.00</td></tr>
+          <tr class="row-startup"><td>Rodeo Digital</td><td class="num">99.94</td><td class="num">100.00</td></tr>
+
+          <tr class="row-sector"><td>Safety</td><td class="num">99.84</td><td class="num">99.84</td></tr>
+          <tr class="row-startup"><td>HPS Lab Designs Private Ltd</td><td class="num">99.84</td><td class="num">99.84</td></tr>
+
+          <tr class="row-sector"><td>Sustainability</td><td class="num">342.74</td><td class="num">234.74</td></tr>
+          <tr class="row-startup"><td>Evlogia Eco Care Pvt Limited</td><td class="num">99.74</td><td class="num">99.74</td></tr>
+          <tr class="row-startup"><td>Saltech Design Labs</td><td class="num">243.00</td><td class="num">135.00</td></tr>
+
+          <tr class="row-total"><td>Grand Total</td><td class="num">3332.13</td><td class="num">2953.14</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- ONGC -->
-  <div class="st-group">
-    <div class="st-grouphead">
-      <span class="st-grouptag">Backed by ONGC</span>
-      <span class="st-count">27 ventures</span>
+  <!-- ONGC TABLE -->
+  <div class="tbl-group">
+    <div class="tbl-head">
+      <div class="tbl-tag">Backed by ONGC</div>
+      <div class="tbl-title">Investments by ONGC</div>
+      <div class="tbl-note">Amounts in ₹ lakhs. Includes MRPL share in the proportion ONGC : MRPL = 100 : 1. As on 31.03.2026.</div>
     </div>
-    <div class="st-grid">
-      <div class="st-card"><div class="st-name">Planys Technologies</div><div class="st-sector">Underwater robotic inspection</div></div>
-      <div class="st-card"><div class="st-name">String Bio</div><div class="st-sector">Converting methane to edible protein</div></div>
-      <div class="st-card"><div class="st-name">Chakr Innovation</div><div class="st-sector">Carbon capture from engine exhaust</div></div>
-      <div class="st-card"><div class="st-name">Sagar Defence Engineering</div><div class="st-sector">Unmanned aerial &amp; surface vehicles</div></div>
-      <div class="st-card"><div class="st-name">Logic Ladder Technologies</div><div class="st-sector">ESG compliance service provider</div></div>
-      <div class="st-card"><div class="st-name">Sparkyo Technology</div><div class="st-sector">Deep-tech asset tracking</div></div>
-      <div class="st-card"><div class="st-name">Constems AI Systems</div><div class="st-sector">Deep-tech online inspection</div></div>
-      <div class="st-card"><div class="st-name">VDT Pipeline Integrity Services</div><div class="st-sector">Pipeline inspection</div></div>
-      <div class="st-card"><div class="st-name">CYRRUP Solutions</div><div class="st-sector">Diesel theft detection &amp; online inspection</div></div>
-      <div class="st-card"><div class="st-name">Pepfuels Technologies</div><div class="st-sector">Fuel supply at doorstep</div></div>
-      <div class="st-card"><div class="st-name">Kshumat Energy</div><div class="st-sector">Manufacturing bio-diesel</div></div>
-      <div class="st-card"><div class="st-name">Simulanis Solutions</div><div class="st-sector">Deep-tech online safety &amp; plant training modules</div></div>
-      <div class="st-card"><div class="st-name">Aavritti Technologies</div><div class="st-sector">Sub-surface buried material detection</div></div>
-      <div class="st-card"><div class="st-name">StrautX Technologies</div><div class="st-sector">Solar energy</div></div>
-      <div class="st-card"><div class="st-name">Blujay Robotics</div><div class="st-sector">Fire-fighting robots</div></div>
-      <div class="st-card"><div class="st-name">WellRx Technologies</div><div class="st-sector">Oil-well drilling &amp; well-intervention tools</div></div>
-      <div class="st-card"><div class="st-name">Photom Technologies</div><div class="st-sector">Waterless solar panel cleaning systems</div></div>
-      <div class="st-card"><div class="st-name">Gascomp Fueltech (India)</div><div class="st-sector">Gas compressor manufacturer</div></div>
-      <div class="st-card"><div class="st-name">Petrobot Technologies</div><div class="st-sector">Robotic inspection of tanks, pipelines &amp; assets</div></div>
-      <div class="st-card"><div class="st-name">Aloe Ecell</div><div class="st-sector">Aloevera-based batteries</div></div>
-      <div class="st-card"><div class="st-name">Dash Dynamic</div><div class="st-sector">Wireless charging</div></div>
-      <div class="st-card"><div class="st-name">Vayuguard Climate Tech</div><div class="st-sector">Domestic &amp; industrial air purifiers</div></div>
-      <div class="st-card"><div class="st-name">Saltech</div><div class="st-sector">Converting waste into construction material</div></div>
-      <div class="st-card"><div class="st-name">Angelbot AI</div><div class="st-sector">AI / ML</div></div>
-      <div class="st-card"><div class="st-name">Kairus Energies</div><div class="st-sector">Lithium &amp; sodium-ion batteries</div></div>
-      <div class="st-card"><div class="st-name">Watthour</div><div class="st-sector">Sodium-ion battery cell manufacturing</div></div>
-      <div class="st-card"><div class="st-name">Nikol Automotive</div><div class="st-sector">EV charger manufacturer &amp; charging network</div></div>
+    <div class="tbl-scroll">
+      <table class="ongc">
+        <thead>
+          <tr>
+            <th class="sno">S.No</th>
+            <th>Startup name</th>
+            <th>Sector</th>
+            <th class="num">Fund allocated</th>
+            <th class="num">Fund disbursed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="sno">1</td><td class="t-name">Planys Technologies Pvt. Ltd</td><td class="t-sector">Underwater robotic inspection</td><td class="num">473.60</td><td class="num">473.60</td></tr>
+          <tr><td class="sno">2</td><td class="t-name">String Bio Private Limited</td><td class="t-sector">Converting methane to edible protein</td><td class="num">465.80</td><td class="num">465.80</td></tr>
+          <tr><td class="sno">3</td><td class="t-name">Chakr Innovation Pvt Ltd</td><td class="t-sector">Carbon capture from engine exhaust</td><td class="num">509.57</td><td class="num">509.57</td></tr>
+          <tr><td class="sno">4</td><td class="t-name">Sagar Defence Engineering Pvt Ltd</td><td class="t-sector">Unmanned aerial and surface vehicles</td><td class="num">970.03</td><td class="num">970.03</td></tr>
+          <tr><td class="sno">5</td><td class="t-name">Logic Ladder Technologies Pvt. Ltd</td><td class="t-sector">ESG compliance service provider</td><td class="num">592.47</td><td class="num">592.47</td></tr>
+          <tr><td class="sno">6</td><td class="t-name">Sparkyo Technology Private Ltd</td><td class="t-sector">Deep-tech asset tracking</td><td class="num">250.00</td><td class="num">250.00</td></tr>
+          <tr><td class="sno">7</td><td class="t-name">Constems AI Systems Private Ltd</td><td class="t-sector">Deep-tech online inspection</td><td class="num">399.50</td><td class="num">399.50</td></tr>
+          <tr><td class="sno">8</td><td class="t-name">VDT Pipeline Integrity Services Pvt Ltd</td><td class="t-sector">Pipeline inspection</td><td class="num">400.00</td><td class="num">400.00</td></tr>
+          <tr><td class="sno">9</td><td class="t-name">CYRRUP Solutions Pvt. Ltd</td><td class="t-sector">Diesel theft detection and online inspection</td><td class="num">150.00</td><td class="num">150.00</td></tr>
+          <tr><td class="sno">10</td><td class="t-name">Pepfuels Technologies Pvt Ltd</td><td class="t-sector">Fuel supply at doorstep</td><td class="num">299.00</td><td class="num">299.00</td></tr>
+          <tr><td class="sno">11</td><td class="t-name">Kshumat Energy Pvt Ltd</td><td class="t-sector">Manufacturing bio-diesel</td><td class="num">326.80</td><td class="num">326.00</td></tr>
+          <tr><td class="sno">12</td><td class="t-name">Simulanis Solutions Private Limited</td><td class="t-sector">Deep-tech online safety and plant training modules</td><td class="num">399.48</td><td class="num">399.48</td></tr>
+          <tr><td class="sno">13</td><td class="t-name">Aavritti Technologies Pvt Ltd</td><td class="t-sector">Sub-surface buried material detection</td><td class="num">150.00</td><td class="num">150.00</td></tr>
+          <tr><td class="sno">14</td><td class="t-name">StrautX Technologies LLP</td><td class="t-sector">Solar energy</td><td class="num">49.00</td><td class="num">49.00</td></tr>
+          <tr><td class="sno">15</td><td class="t-name">Blujay Robotics Private Limited</td><td class="t-sector">Fire-fighting robots</td><td class="num">100.00</td><td class="num">100.00</td></tr>
+          <tr><td class="sno">16</td><td class="t-name">WellRx Technologies Private Limited</td><td class="t-sector">Oil-well drilling and well-intervention tools manufacturer</td><td class="num">500.00</td><td class="num">500.00</td></tr>
+          <tr><td class="sno">17</td><td class="t-name">Photom Technologies Private Limited</td><td class="t-sector">Waterless solar panel cleaning system manufacturer</td><td class="num">70.00</td><td class="num">70.00</td></tr>
+          <tr><td class="sno">18</td><td class="t-name">Gascomp Fueltech (India) Pvt. Ltd</td><td class="t-sector">Gas compressor manufacturer</td><td class="num">300.00</td><td class="num">300.00</td></tr>
+          <tr><td class="sno">19</td><td class="t-name">Petrobot Technologies Pvt Ltd</td><td class="t-sector">Robotic inspection of tanks, pipelines and other assets</td><td class="num">215.35</td><td class="num">215.35</td></tr>
+          <tr><td class="sno">20</td><td class="t-name">Aloe Ecell Private Limited</td><td class="t-sector">Manufacturing aloevera batteries "Aloe Ecell"</td><td class="num">169.90</td><td class="num">169.90</td></tr>
+          <tr><td class="sno">21</td><td class="t-name">Dash Dynamic Pvt Ltd</td><td class="t-sector">Wireless charging</td><td class="num">499.80</td><td class="num">375.00</td></tr>
+          <tr><td class="sno">22</td><td class="t-name">Vayuguard Climate Tech Pvt. Ltd.</td><td class="t-sector">Air purifier manufacturer (domestic / industrial)</td><td class="num">120.00</td><td class="num">120.00</td></tr>
+          <tr><td class="sno">23</td><td class="t-name">Saltech</td><td class="t-sector">Converting waste into construction material</td><td class="num">400.00</td><td class="num">—</td></tr>
+          <tr><td class="sno">24</td><td class="t-name">Angelbot AI Private Limited</td><td class="t-sector">AI / ML</td><td class="num">700.00</td><td class="num">—</td></tr>
+          <tr><td class="sno">25</td><td class="t-name">Kairus Energies Private Limited</td><td class="t-sector">Lithium and sodium-ion batteries</td><td class="num">200.00</td><td class="num">—</td></tr>
+          <tr><td class="sno">26</td><td class="t-name">Watthour Private Limited</td><td class="t-sector">Sodium-ion battery cell manufacturing</td><td class="num">220.00</td><td class="num">—</td></tr>
+          <tr><td class="sno">27</td><td class="t-name">Nikol Automotive Pvt Ltd</td><td class="t-sector">EV charger manufacturer and charging network</td><td class="num">240.00</td><td class="num">—</td></tr>
+          <tr class="row-total"><td class="sno"></td><td>Total</td><td></td><td class="num">9170.30</td><td class="num">7284.70</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
