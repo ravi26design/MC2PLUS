@@ -52,15 +52,25 @@ nav{
 .tbl-tag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:10px;margin-bottom:8px;}
 .tbl-tag::before{content:'';display:block;width:24px;height:1px;background:var(--accent2);}
 .tbl-title{font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,28px);font-weight:600;letter-spacing:-0.5px;}
-.tbl-note{font-size:13px;color:var(--muted);margin-top:6px;font-weight:300;}
+.tbl-note{font-size:13px;color:var(--muted);margin-top:0;margin-bottom:16px;font-weight:300;}
+
+/* TABS */
+.tabs{display:inline-flex;gap:6px;background:var(--surface2);border:1px solid var(--border);border-radius:30px;padding:5px;margin-bottom:24px;max-width:100%;}
+.tab{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--muted);background:none;border:0;padding:11px 22px;border-radius:24px;cursor:pointer;letter-spacing:.3px;transition:background .2s,color .2s;white-space:nowrap;}
+.tab:hover{color:var(--text);}
+.tab.active{background:var(--text);color:#fff;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;animation:tabIn .25s ease;}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
 .tbl-scroll{
   overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);
   box-shadow:0 16px 44px rgba(0,32,89,0.06);-webkit-overflow-scrolling:touch;
 }
 table{width:100%;border-collapse:collapse;font-size:14px;}
 thead th{
-  background:var(--text);color:#fff;text-align:left;
+  background:transparent;color:var(--accent2);text-align:left;
   padding:16px 20px;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;white-space:nowrap;
+  border-bottom:2px solid var(--text);
 }
 th.num,td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;}
 th.sno,td.sno{text-align:center;width:58px;}
@@ -69,24 +79,18 @@ tbody td{padding:13px 20px;border-bottom:1px solid var(--border);color:var(--tex
 tbody tr:last-child td{border-bottom:0;}
 tbody tr{transition:background .15s ease;}
 
-/* HPCL — sector / startup hierarchy */
-.row-sector td{font-weight:600;background:rgba(212,98,42,0.07);}
+/* HPCL — sector / startup hierarchy (differentiated by lines) */
+.row-sector td{font-weight:600;border-top:1px solid var(--border2);}
 .row-sector td:first-child{box-shadow:inset 3px 0 0 var(--accent);}
 .row-sector td.num{color:var(--accent2);}
-.row-sector:hover td{background:rgba(212,98,42,0.11);}
 .row-startup td:first-child{padding-left:42px;color:var(--muted);font-weight:400;}
 .row-startup td.num{color:var(--text);font-weight:500;}
-.row-startup:hover td{background:rgba(0,32,89,0.035);}
-
-/* ONGC — zebra + hover */
-table.ongc tbody tr:nth-child(even):not(.row-total) td{background:#faf8f3;}
-table.ongc tbody tr:not(.row-total):hover td{background:rgba(0,32,89,0.05);}
 .t-name{font-weight:500;}
 .t-sector{color:var(--muted);font-weight:300;}
 
 /* total row */
-.row-total td{font-weight:700;background:var(--text)!important;color:#fff;border-bottom:0;letter-spacing:.3px;}
-.row-total td.num{color:#fff;}
+.row-total td{font-weight:700;color:var(--text);border-top:2px solid var(--text);letter-spacing:.3px;}
+.row-total td.num{color:var(--text);}
 
 table.ongc{min-width:780px;}
 table.hpcl{min-width:580px;}
@@ -118,6 +122,8 @@ footer .nav-logo-img img{width:80px;}
   nav .nav-links li:last-child a{border-bottom:0;}
   .press-hero{padding:128px 24px 36px;}
   .tbl-wrap-outer{padding:8px 24px 80px;}
+  .tabs{display:flex;width:100%;}
+  .tab{flex:1;text-align:center;padding:11px 8px;font-size:12px;}
   footer{flex-direction:column;text-align:center;gap:16px;padding:32px 24px;}
 }
 </style>
@@ -152,11 +158,14 @@ footer .nav-logo-img img{width:80px;}
 
 <section class="tbl-wrap-outer">
 
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="hpcl" role="tab">Investments by HPCL</button>
+    <button class="tab" data-tab="ongc" role="tab">Investments by ONGC</button>
+  </div>
+
   <!-- HPCL TABLE -->
-  <div class="tbl-group">
+  <div class="tab-panel active" id="tab-hpcl">
     <div class="tbl-head">
-      <div class="tbl-tag">Backed by HPCL</div>
-      <div class="tbl-title">Investments by HPCL</div>
       <div class="tbl-note">Amounts in ₹ lakhs. Sector rows show the sector total.</div>
     </div>
     <div class="tbl-scroll">
@@ -225,10 +234,8 @@ footer .nav-logo-img img{width:80px;}
   </div>
 
   <!-- ONGC TABLE -->
-  <div class="tbl-group">
+  <div class="tab-panel" id="tab-ongc">
     <div class="tbl-head">
-      <div class="tbl-tag">Backed by ONGC</div>
-      <div class="tbl-title">Investments by ONGC</div>
       <div class="tbl-note">Amounts in ₹ lakhs. Includes MRPL share in the proportion ONGC : MRPL = 100 : 1. As on 31.03.2026.</div>
     </div>
     <div class="tbl-scroll">
@@ -299,6 +306,18 @@ footer .nav-logo-img img{width:80px;}
   if(!nav||!toggle)return;
   toggle.addEventListener('click',function(){var o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false');});
   nav.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
+})();
+(function(){
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+      document.querySelectorAll('.tab-panel').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      var p=document.getElementById('tab-'+t.getAttribute('data-tab'));
+      if(p)p.classList.add('active');
+    });
+  });
 })();
 </script>
 </body>
